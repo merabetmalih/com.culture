@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro&family=Dancing+Script&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Advent Pro", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style-type: none;
+}
+h2 {
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 30px;
+  font-size: 2rem;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+#logo {
+  font-family: "Dancing Script", cursive;
+  font-weight: bold;
+  float: left;
+}
+/* ***************Navbar*************** */
+nav {
+  overflow: hidden;
+  background-color: darkkhaki;
+  position: fixed;
+  width: 100%;
+  opacity: 0.9;
+}
+header li {
+  float: right;
+  font-size: 1.2rem;
+}
+header li a {
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 18px 16px;
+}
+#logo {
+  font-family: "Dancing Script", cursive;
+  font-weight: bold;
+  float: left;
+}
+
+/* ***************Image Principal********************/
+#imagePrincipale {
+  padding-top: 60px;
+  background:no-repeat fixed 50% 50%;
+  background-image:url("/media/image-principale.JPG");
+  background-size: cover;
+  height: 699px;
+}
+h1 {
+  font-family: "Dancing Script", cursive;
+  text-align: center;
+  color: orangered;
+  font-size: 6rem;
+  text-shadow: 5px 1px 1px beige;
+}
+#premierTrait {
+  height: 1px;
+  width: 25%;
+  margin: -3px auto;
+  background-color: aliceblue;
+}
+h3 {
+  text-align: center;
+  font-size: 3rem;
+  color: antiquewhite;
+  text-shadow: 1px 3px 1px black;
+}
+
+/******************Presentation************************/
+#presentation {
+  background-color: #fffae1;
+  padding: 10px 0px 100px 0;
+}
+#texteIntro {
+  padding: 0% 20%;
+}
+#prestation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 30px 10%;
+}
+.imagePrestation h4 {
+  font-family: "Dancing Script", cursive;
+  text-align: center;
+  margin: 15px;
+  font-size: 1.8rem;
+  font-weight: 300px;
+}
+.imagePrestation img {
+  border-radius: 10px;
+  box-shadow: 2px 5px 3px 1px rgb(0, 0, 7);
+  width : 250px;
+  height : 300px;
+  
+}
+.imagePrestation:hover {
+  opacity: 0.5;
+  transform: scale(1.05);
+  transition: 0.8s ease-in-out;
+}
+
+/* *****************Footer************************** */
+footer {
+  background-color: #524a34;
+  color: #fffae1;
+  padding: 20px 0 10px 0;
+  text-align: center;
+}
+form {
+  margin: 0 auto;
+  max-width: 900px;
+}
+input,
+textarea,
+button {
+  border: none;
+  width: 55%;
+  padding: 15px 10px;
+  margin: 1px 0;
+  font-size: 1.2rem;
+  font-family: "Advent Pro", sans-serif;
+  border-radius: 8px;
+}
+textarea {
+  height: 120px;
+}
+button {
+  font-size: 1.5rem;
+  background-color: #fffae1;
+}
+button:hover {
+  background-color: rgb(255, 136, 0);
+  color: #fffae1;
+  cursor: pointer;
+  transition: 0.3s is ease-in-out;
+}
+#deuxiemeTrait {
+  height: 1px;
+  width: 75%;
+  background-color: #fffae1;
+  margin: 60px auto;
+}
+#Icons a {
+  color: #fffae1;
+}
+P.blocktext {
+  text-align: center;
+}

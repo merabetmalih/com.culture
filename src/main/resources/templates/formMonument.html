@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="template1">
+<head>
+	<meta charset="UTF8"/>
+	<title>Formulaire Monument</title>
+	<link rel="stylesheet" href="/webjars/bootstrap/5.2.2/css/bootstrap.min.css"/>
+</head>
+<body>
+	<div layout:fragment="content1">
+	
+		<div class="col-md-6 offset-3">
+				<form method="post" th:action="@{/admin/save}">
+					<div>
+						<label for="codeM">Code Monument</label>
+						<input id="codeM" class="form-control" type="text" name="codeM" th:value="${monument.codeM}"></input>
+						<span th:errors="${monument.codeM}"></span>
+					</div>
+					<div>
+						<label for="nomM">Nom Monument</label>
+						<input id="nomM" class="form-control" type="text" name="nomM" th:value="${monument.nomM}"></input>
+						<span th:errors="${monument.nomM}"></span>
+					</div>
+					<div>
+						<label for="proprietaire">Proprietaire</label>
+						<input id="proprietaire" class="form-control" type="text" name="proprietaire" th:value="${monument.proprietaire}"></input>
+						<span th:errors="${monument.proprietaire}"></span>
+					</div>
+					<div>	
+						<label for="typeM">Type</label>
+						<input id="typeM"class="form-control" type="tel" name="typeM" th:value="${monument.typeM}"></input>
+						<span th:errors="${monument.typeM}"></span>
+					</div>
+					<div>
+						<label for="longitude">Longitude</label>
+						<input id="longitude"class="form-control" type="tel" name="longitude" th:value="${monument.longitude}"></input>
+						<span th:errors="${monument.longitude}"></span>
+					</div>
+					<div>
+						<label for="latitude">Latitude</label>
+						<input id="latitude"class="form-control" type="tel" name="latitude" th:value="${monument.latitude}"></input>
+						<span th:errors="${monument.latitude}"></span>
+					</div>
+					<div>
+						<label for="latitude">Code Lieu</label>
+						<input id="codeLieu"class="form-control" type="tel" name="codeLieu" th:value="${monument.codeLieu}"></input>
+						<span th:errors="${monument.codeLieu}"></span>
+					</div>
+				
+						
+						
+					<button type="submit" class="btn btn-primary">Enregister</button>
+					
+					
+				
+				</form>
+		
+		
+		
+		</div>
+		
+			
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Monuments & Célébrités</title>
+  </head>
+  <body>
+    <header >
+      <nav>
+      <ul class="dropdown-menu">
+			<li><a class="dropdown-item" sec:authorize="isAuthenticated()" th:href="@{/logout}">Se deconnecter</a></li>
+		</ul> 
+        <ul>
+          	<li id="logo"><a href="#">Monuments & Célébrités</a></li>
+          	<li><a sec:authorize="!isAuthenticated()" th:href="@{/user/index}">Se connecter</a></li>
+          	<li class="nav-item dropdown" sec:authorize="isAuthenticated()" >
+				<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><span sec:authentication="name"></span></a>
+			</li>
+        </ul>
+        
+      </nav>
+      
+      <div id="imagePrincipale">
+        <h1>Monuments & Célebrités</h1>
+        <div id="premierTrait"></div>
+        <h3>De Montpellier</h3>
+      </div>
+    </header>
+
+    <section id="presentation">
+      <div id="textIntro">
+        <h2>Monuments historiques à Montpellier</h2>
+        <p class="blocktext">
+          Dans l’Hérault, la dynamique et ensoleillée Montpellier est un vrai
+          régal pour les yeux. Découvrez quels monuments à Montpellier sont
+          incontournables durant votre séjour dans la ville. Que vous soyez
+          Montpelliérains, Montpelliéraines ou alors touriste à Montpellier,
+          nous vous proposons ci-dessous la liste des immeubles classés et des
+          monuments historiques qui constituent le patrimoine de la ville. Pour
+          chaque édifice vous trouverez de l'information sur le bâtiment ainsi
+          que l'adresse pour vous y rendre.
+        </p>
+      </div>
+      <div id="prestation">
+        <div class="imagePrestation">
+          <h4>Nous trouver</h4>
+          <a href="#"><img src="media/carte.JPG" alt="carte" /></a>
+        </div>
+        <div class="imagePrestation">
+          <h4>Monuments</h4>
+          <a href="#"><img src="media/monument.jpg" alt="chambre" /></a>
+        </div>
+        <div class="imagePrestation">
+          <h4>Celebrités</h4>
+          <a href="#"><img src="media/celebrite.jpg" alt="repas" /></a>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div id="deuxiemeTrait"></div>
+      <div id="copyrightEtIcons">
+        <div id="Icons">
+          <a href="http//:www.facebook.fr"><i class="fa fa-facebook"></i></a>
+          <a href="http//:www.twitter.fr"><i class="fa fa-twitter"></i></a>
+          <a href="http//:www.instagram.com"><i class="fa fa-instagram"></i></a>
+        </div>
+        <div id="Copyright"><span>© Di-art Andria : 2022</span></div>
+      </div>
+    </footer>
+  </body>
+</html>

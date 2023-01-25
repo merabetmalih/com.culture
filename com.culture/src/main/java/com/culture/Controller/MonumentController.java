@@ -28,13 +28,18 @@ import com.culture.Repository.LieuRepository;
 public class MonumentController {
 	@Autowired
 	private MonumentRepository monumentRepository;
-	
+
+	@GetMapping("/")
+	public String home() {
+		return "index";
+
+	}
 	@GetMapping("/user/index")
-	public String monuments (Model model, 
-							@RequestParam(name="page", defaultValue="0") int page, 
+	public String monuments (Model model,
+							@RequestParam(name="page", defaultValue="0") int page,
 							@RequestParam(name="size", defaultValue="7") int size,
 							@RequestParam(name="keyword", defaultValue="") String keyword
-								
+
 								){
 		Page<Monument> pageMonuments=monumentRepository.findByNomMContains(keyword,PageRequest.of(page, size));
 		model.addAttribute("listMonument", pageMonuments.getContent());
@@ -43,11 +48,7 @@ public class MonumentController {
 		model.addAttribute("keyword",keyword);
 		return "monuments";
 	}
-	@GetMapping("/")
-	public String home() {
-		return "index";
-		
-	}
+
 	
 	@GetMapping("/admin/delete")
 	public String delete(String id, String keyword, int page) {
@@ -55,6 +56,7 @@ public class MonumentController {
 		return "redirect:/user/index?page="+page+"&keyword="+keyword;
 		
 	}
+
 	
 	@GetMapping("/admin/formMonument")
 	public String formMonument(Model model) {

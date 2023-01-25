@@ -43,7 +43,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http.logout()
 	    .logoutSuccessUrl("/");
 		
-		http.formLogin();
+		http.formLogin()
+		.defaultSuccessUrl("/", true);
 		http.authorizeRequests().antMatchers("/doLogout").permitAll();
 		http.authorizeRequests().antMatchers("/").permitAll();
 		http.authorizeRequests().antMatchers("/webjars/**").permitAll();

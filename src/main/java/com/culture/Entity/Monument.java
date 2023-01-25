@@ -51,7 +51,7 @@ public class Monument {
 	private String proprietaire;
 	
 	@NotEmpty @Size(max=20)
-	@Column(name="typeM")
+	@Column(name="typem")
 	private String typeM;
 	
 	
@@ -63,12 +63,12 @@ public class Monument {
 	private double latitude;
 	
 	
-	@ManyToOne @JoinColumn(name="code_insee", nullable=true) 
+	@ManyToOne @JoinColumn(name="codeinsee", nullable=true)
 	private Lieu codeLieu;
 	
 	
     @ManyToMany @Cascade(CascadeType.ALL)
-    @JoinTable(name="associea", joinColumns=@JoinColumn(name="code_m"), inverseJoinColumns=@JoinColumn(name="numCelebrite"))
+    @JoinTable(name="associea", joinColumns=@JoinColumn(name="codem"), inverseJoinColumns=@JoinColumn(name="numcelebrite"))
 	private Collection<Celebrite> celebrite;
 
 

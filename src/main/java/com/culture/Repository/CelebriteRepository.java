@@ -15,7 +15,7 @@ public interface CelebriteRepository extends JpaRepository<Celebrite, String> {
 	@Query("select c from Celebrite c where  c.nom like CONCAT('%',:x,'%')")
 	public List<Celebrite> getByNameContaining(@Param("x") String nom);
 
-	@Query("select c from Celebrite c where  c.numCelebrite = :x")
+	@Query("select c from Celebrite c where  c.numcelebrite = :x")
 	public Celebrite getCelebriteById(@Param("x") long numCelebrite);
 
 }

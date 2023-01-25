@@ -1,9 +1,12 @@
 package com.culture.Controller;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotEmpty;
 
 import com.culture.Repository.MonumentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
@@ -16,10 +19,22 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.culture.Entity.Monument;
 
+import java.util.List;
+
 @Controller
+
 public class MonumentController {
+
+	private final  MonumentRepository monumentRepository;
 	@Autowired
-	private MonumentRepository monumentRepository;
+
+	public MonumentController(MonumentRepository monumentRepository) {
+		this.monumentRepository = monumentRepository;
+	}
+
+
+
+
 	
 	@GetMapping("/user/index")
 	public String monuments (Model model, 
@@ -29,6 +44,7 @@ public class MonumentController {
 								
 								){
 		Page<Monument> pageMonuments=monumentRepository.findByNomMContains(keyword,PageRequest.of(page, size));
+
 		model.addAttribute("listMonument", pageMonuments.getContent());
 		model.addAttribute("pages", new int[pageMonuments.getTotalPages()]);
 		model.addAttribute("currentPage",page);
@@ -37,6 +53,8 @@ public class MonumentController {
 	}
 	@GetMapping("/")
 	public String home() {
+
+
 		return "index";
 		
 	}

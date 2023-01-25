@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface MonumentRepository extends JpaRepository<Monument, String> {
 
+    @Query("select m from Monument m")
     Page<Monument> findByNomMContains(String kw, Pageable pageable);
 
     @Query("select m from Monument m")

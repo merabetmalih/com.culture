@@ -22,3 +22,4 @@ public interface LieuRepository extends JpaRepository<Lieu, String> {
 	@Query("select m from Monument m")
 	Page<Lieu> getAllLieu(org.springframework.data.domain.Pageable pageable);
 }
+
